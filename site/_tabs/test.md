@@ -1,5 +1,5 @@
 ---
-tab_name: test
+tab_name: test-t
 title: Test seite
 order: 7
 ---
