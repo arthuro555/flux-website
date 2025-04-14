@@ -1,0 +1,51 @@
+media:
+  input: site/assets
+  output: /assets/
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: "site/_posts"
+    view:
+      fields: [title, published, date, category, tags]
+    exclude:
+      - ".gitkeep"
+    fields:
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: date
+        label: Date
+        type: date
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+  - name: tabs
+    label: Seiten
+    type: collection
+    path: "site/_tabs"
+    filename: "{primary}.md"
+    view:
+      primary: tab_name
+      sort: [order]
+      fields: [title, icon]
+    fields:
+      - name: tab_name
+        label: Name in URL
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: order
+        label: Order
+        type: number
+      - name: icon
+        label: Icon
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
